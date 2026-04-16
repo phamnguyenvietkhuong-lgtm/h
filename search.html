@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tra cứu - Phạm Nguyễn Việt Khương</title>
+</head>
+<body>
+    <h1>靜宜資管老師查詢 (Hệ thống của Khương)</h1>
+    <form method="post">
+        Nhập tên giảng viên: 
+        <input type="text" name="keyword">
+        <button type="submit">Truy vấn</button>
+    </form>
+
+    {% if keyword %}
+    <h3>Kết quả cho từ khóa: {{ keyword }}</h3>
+    <ul>
+        {% for item in results %}
+        <li>Họ tên: {{ item.name }} - Phòng: {{ item.lab }} - Email: {{ item.mail }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+    <a href="/">Quay lại trang chủ</a>
+</body>
+</html>
